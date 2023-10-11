@@ -48,6 +48,7 @@ jobs:
         echo "TIME=$(TZ=UTC+5:30 date +%m%d%H%M )" >> $GITHUB_OUTPUT
     - name: Build Kernel-With-KernelSU
       run: |
+        make distclean
         rm -rf KernelSU
         rm -rf drivers/kernelsu
         curl -LSs "https://raw.githubusercontent.com/tiann/KernelSU/main/kernel/setup.sh" | bash -s main
